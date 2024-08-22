@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto Slab");
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  /*background: #212020;*/
+  background: #3d3d3d;
+  color: white;
+
+}
+
+.nav-link{
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding: 8px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  letter-spacing: 1px;
+} 
+
+.button {
+  background: #e10d0d;
+  color: white;
+}
+
+.rotate {
+  animation: rotation 8s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  } 
+  to {
+    transform: rotate(359deg);
+  }
+
+}
