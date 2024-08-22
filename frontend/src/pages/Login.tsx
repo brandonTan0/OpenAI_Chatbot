@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Avatar, Box, Button, Checkbox, Container, createTheme, CssBaseline, FormControlLabel, Grid, Link, TextField, ThemeProvider, Typography, useTheme } from '@mui/material';
+import { Box, Button, Checkbox, createTheme, FormControlLabel, ThemeProvider, Typography } from '@mui/material';
 import CustomizedInput from '../components/shared/CustomizedInput';
 import { useAuth } from '../context/AuthContext';
 import { toast } from 'react-hot-toast';

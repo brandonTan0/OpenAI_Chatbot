@@ -1,4 +1,3 @@
-import React from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import GraphemeSplitter from 'grapheme-splitter'; // npm i grapheme-splitter
 
