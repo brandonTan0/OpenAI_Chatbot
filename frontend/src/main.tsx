@@ -27,10 +27,10 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <AuthProvider>
       <Router>
-        <ThemeProvider theme = { theme }>
-          <Toaster position='top-center' />
+        
+          
           <App />
-        </ThemeProvider>
+        
       </Router>
     </AuthProvider>
   </React.StrictMode>
