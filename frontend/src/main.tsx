@@ -14,7 +14,7 @@ import Home from './pages/Home';
 
 if (process.env.NODE_ENV === 'production') disableReactDevTools();
 
-axios.defaults.baseURL = 'https://openai-chatbot-api.onrender.com/api/v1';
+axios.defaults.baseURL = 'http://localhost:3000/api/v1';
 axios.defaults.withCredentials = true;
 
 /*const theme = createTheme({
