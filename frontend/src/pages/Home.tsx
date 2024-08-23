@@ -2,6 +2,8 @@ import { Box, useMediaQuery, useTheme } from '@mui/material';
 import TypingAnim from '../components/typer/TypeAnim';
 
 const Home = () => {
+  return <Box>HOME</Box>
+  /*
     const theme = useTheme();
     const isBelowMd = useMediaQuery(theme.breakpoints.down("md"));
     return (
@@ -56,6 +58,7 @@ const Home = () => {
         </Box>
       </Box>
     )
+      */
 };
 
 export default Home;
