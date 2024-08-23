@@ -9,10 +9,8 @@ import { HashRouter as Router } from 'react-router-dom';
 //import { AuthProvider } from './context/AuthContext';
 import axios from 'axios';
 //import { Toaster } from 'react-hot-toast';
-import { disableReactDevTools } from '@fvilers/disable-react-devtools';
 import Home from './pages/Home';
 
-if (process.env.NODE_ENV === 'production') disableReactDevTools();
 
 axios.defaults.baseURL = 'http://localhost:3000/api/v1';
 axios.defaults.withCredentials = true;
