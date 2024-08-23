@@ -11,7 +11,7 @@ import { disableReactDevTools } from '@fvilers/disable-react-devtools';
 
 if (process.env.NODE_ENV === 'production') disableReactDevTools();
 
-axios.defaults.baseURL = 'https://openai-chatbot-j6t5.onrender.com/api/v1';
+axios.defaults.baseURL = 'https://openai-chatbot-api.onrender.com/api/v1';
 axios.defaults.withCredentials = true;
 
 const theme = createTheme({
