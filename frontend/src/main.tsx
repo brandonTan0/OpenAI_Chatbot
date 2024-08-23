@@ -26,7 +26,7 @@ axios.defaults.withCredentials = true;
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <AuthProvider>
+    {/*<AuthProvider>*/}
       <Router>
         {/*<ThemeProvider theme = { theme }>
           <Toaster position='top-center' />
@@ -34,7 +34,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <Home />
         
       </Router>
-    </AuthProvider>
+    {/*</AuthProvider>*/}
   </React.StrictMode>
 );
 
