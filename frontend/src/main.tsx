@@ -6,7 +6,7 @@ import './index.css';
 //import { BrowserRouter } from 'react-router-dom';
 import { HashRouter as Router } from 'react-router-dom';
 
-import { AuthProvider } from './context/AuthContext';
+//import { AuthProvider } from './context/AuthContext';
 import axios from 'axios';
 //import { Toaster } from 'react-hot-toast';
 import { disableReactDevTools } from '@fvilers/disable-react-devtools';
