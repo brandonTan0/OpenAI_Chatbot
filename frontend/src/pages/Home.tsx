@@ -1,8 +1,8 @@
-import { Box, useMediaQuery, useTheme } from '@mui/material';
-import TypingAnim from '../components/typer/TypeAnim';
+//import { Box, useMediaQuery, useTheme } from '@mui/material';
+//import TypingAnim from '../components/typer/TypeAnim';
 
 const Home = () => {
-  return <Box>HOME</Box>
+  return <p>HOME</p>
   /*
     const theme = useTheme();
     const isBelowMd = useMediaQuery(theme.breakpoints.down("md"));
