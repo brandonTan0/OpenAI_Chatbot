@@ -43,6 +43,7 @@ export const userSignup = async (
             httpOnly: true,
             signed: true,
             secure: true,
+            sameSite: 'none',
         });
         const token = createToken(user._id.toString(), user.email, "7d");
         console.log('Generated Token:', token); // Debugging statement
@@ -55,6 +56,7 @@ export const userSignup = async (
             httpOnly: true,
             signed: true,
             secure: true,
+            sameSite: 'none',
         });
 
         return res.status(201).json({message: "Success", name: user.name, email: user.email })
@@ -86,6 +88,7 @@ export const userLogin = async (
             httpOnly: true,
             signed: true,
             secure: true,
+            sameSite: 'none',
         });
         const token = createToken(user._id.toString(), user.email, "7d");
         const expires = new Date();
@@ -97,6 +100,7 @@ export const userLogin = async (
             httpOnly: true,
             signed: true,
             secure: true,
+            sameSite: 'none',
         });
 
         return res.status(200).json({message: "Success", name: user.name, email: user.email });
@@ -147,6 +151,7 @@ export const logoutUser = async (
             httpOnly: true,
             signed: true,
             secure: true,
+            sameSite: 'none',
         });
         return res.status(200).json({ message: "Success", name: user.name, email: user.email });
     } catch(err) {
