@@ -39,19 +39,21 @@ export const userSignup = async (
         // create token and store cookies
         res.clearCookie(COOKIE_NAME, {
             path: '/',
-            domain: 'https://openai-chatbot-api.onrender.com',
+            domain: '.onrender.com',
             httpOnly: true,
             signed: true,
+            secure: true,
         });
         const token = createToken(user._id.toString(), user.email, "7d");
         const expires = new Date();
         expires.setDate(expires.getDate() + 7);
         res.cookie(COOKIE_NAME, token, {
             path: '/',
-            domain: 'https://openai-chatbot-api.onrender.com',
+            domain: '.onrender.com',
             expires,
             httpOnly: true,
             signed: true,
+            secure: true,
         });
 
         return res.status(201).json({message: "Success", name: user.name, email: user.email })
@@ -79,19 +81,21 @@ export const userLogin = async (
         // Token authorization and store cookie
         res.clearCookie(COOKIE_NAME, {
             path: '/',
-            domain: 'https://openai-chatbot-api.onrender.com',
+            domain: '.onrender.com',
             httpOnly: true,
             signed: true,
+            secure: true,
         });
         const token = createToken(user._id.toString(), user.email, "7d");
         const expires = new Date();
         expires.setDate(expires.getDate() + 7);
         res.cookie(COOKIE_NAME, token, {
             path: '/',
-            domain: 'https://openai-chatbot-api.onrender.com',
+            domain: '.onrender.com',
             expires,
             httpOnly: true,
             signed: true,
+            secure: true,
         });
 
         return res.status(200).json({message: "Success", name: user.name, email: user.email });
@@ -138,9 +142,10 @@ export const logoutUser = async (
         }
         res.clearCookie(COOKIE_NAME, {
             path: '/',
-            domain: 'https://openai-chatbot-api.onrender.com',
+            domain: '.onrender.com',
             httpOnly: true,
             signed: true,
+            secure: true,
         });
         return res.status(200).json({ message: "Success", name: user.name, email: user.email });
     } catch(err) {
