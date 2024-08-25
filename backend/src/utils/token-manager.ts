@@ -6,9 +6,11 @@ import { verifyUser } from '../controllers/user-controllers.js';
 export const createToken = (id: string, email: string, expiresIn: string | number) => {
     try {
         const payload = { id, email };
+        console.log("Payload: ", payload);  // Debug 
         const token = jwt.sign(payload, process.env.JWT_SECRET, {
             expiresIn
         });
+        console.log("createToken(token): ", token); // Debug
         return token;
     } catch(err) {
         console.log(err);

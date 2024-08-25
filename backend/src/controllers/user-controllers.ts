@@ -45,6 +45,7 @@ export const userSignup = async (
             secure: true,
         });
         const token = createToken(user._id.toString(), user.email, "7d");
+        console.log('Generated Token:', token); // Debugging statement
         const expires = new Date();
         expires.setDate(expires.getDate() + 7);
         res.cookie(COOKIE_NAME, token, {
