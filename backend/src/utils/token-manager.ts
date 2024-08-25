@@ -4,11 +4,16 @@ import { COOKIE_NAME } from './constants.js';
 import { verifyUser } from '../controllers/user-controllers.js';
 
 export const createToken = (id: string, email: string, expiresIn: string | number) => {
-    const payload = { id, email };
-    const token = jwt.sign(payload, process.env.JWT_SECRET, {
-        expiresIn
-    });
-    return token;
+    try {
+        const payload = { id, email };
+        const token = jwt.sign(payload, process.env.JWT_SECRET, {
+            expiresIn
+        });
+        return token;
+    } catch(err) {
+        console.log(err);
+        return `Unable to create token: ${err.message}`;
+    }
 };
 
 // User Token Verification
