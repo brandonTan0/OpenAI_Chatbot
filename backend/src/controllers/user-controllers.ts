@@ -58,6 +58,7 @@ export const userSignup = async (
             secure: true,
             sameSite: 'none',
         });
+        console.log("Generated Cookie: ", res.cookie);
 
         return res.status(201).json({message: "Success", name: user.name, email: user.email })
     } catch(err) {
