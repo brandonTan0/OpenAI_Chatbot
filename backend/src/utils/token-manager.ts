@@ -6,11 +6,9 @@ import { verifyUser } from '../controllers/user-controllers.js';
 export const createToken = (id: string, email: string, expiresIn: string | number) => {
     try {
         const payload = { id, email };
-        console.log("Payload: ", payload);  // Debug 
         const token = jwt.sign(payload, process.env.JWT_SECRET, {
             expiresIn
         });
-        console.log("createToken(token): ", token); // Debug
         return token;
     } catch(err) {
         console.log(err);
@@ -25,8 +23,6 @@ export const verifyToken = async (
     next: NextFunction,
 ) => {
     const token = req.signedCookies[`${COOKIE_NAME}`];
-    console.log('Signed Cookies:', req.signedCookies); // Debug 
-
     if(!token || token.trim() === "") {
         return res.status(401).json({ message: "Token Not Received", token: token || null });
     }

@@ -39,26 +39,22 @@ export const userSignup = async (
         // create token and store cookies
         res.clearCookie(COOKIE_NAME, {
             path: '/',
-            domain: 'https://openai-chatbot-api.onrender.com',
             httpOnly: true,
             signed: true,
             secure: true,
             sameSite: 'none',
         });
         const token = createToken(user._id.toString(), user.email, "7d");
-        console.log('Generated Token:', token); // Debugging statement
         const expires = new Date();
         expires.setDate(expires.getDate() + 7);
         res.cookie(COOKIE_NAME, token, {
             path: '/',
-            domain: 'https://openai-chatbot-api.onrender.com',
             expires,
             httpOnly: true,
             signed: true,
             secure: true,
             sameSite: 'none',
         });
-        console.log("Generated Cookie: ", res.cookie);  //  Debug statement
         console.log("Response Headers with Set-Cookie:", res.getHeaders());
 
 
@@ -87,7 +83,6 @@ export const userLogin = async (
         // Token authorization and store cookie
         res.clearCookie(COOKIE_NAME, {
             path: '/',
-            domain: 'openai-chatbot-api.onrender.com',
             httpOnly: true,
             signed: true,
             secure: true,
@@ -98,7 +93,6 @@ export const userLogin = async (
         expires.setDate(expires.getDate() + 7);
         res.cookie(COOKIE_NAME, token, {
             path: '/',
-            domain: 'openai-chatbot-api.onrender.com',
             expires,
             httpOnly: true,
             signed: true,
@@ -152,7 +146,6 @@ export const logoutUser = async (
         }
         res.clearCookie(COOKIE_NAME, {
             path: '/',
-            //domain: '.onrender.com',
             httpOnly: true,
             signed: true,
             secure: true,
