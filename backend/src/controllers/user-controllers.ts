@@ -29,7 +29,7 @@ export const userSignup = async (
         const { name,email,password } = req.body;
 
         // Checks if user is already registered
-        const existingUser = await User.findOne({ email} );
+        const existingUser = await User.findOne({ email });
         if (existingUser) return res.status(401).send("Email is already registered");
 
         const hashedPassword = await hash(password, 10);
@@ -39,7 +39,7 @@ export const userSignup = async (
         // create token and store cookies
         res.clearCookie(COOKIE_NAME, {
             path: '/',
-            domain: '.onrender.com',
+            //domain: '.onrender.com',
             httpOnly: true,
             signed: true,
             secure: true,
@@ -51,14 +51,14 @@ export const userSignup = async (
         expires.setDate(expires.getDate() + 7);
         res.cookie(COOKIE_NAME, token, {
             path: '/',
-            domain: '.onrender.com',
+            //domain: '.onrender.com',
             expires,
             httpOnly: true,
             signed: true,
             secure: true,
             sameSite: 'none',
         });
-        console.log("Generated Cookie: ", res.cookie);
+        console.log("Generated Cookie: ", res.cookie);  //  Debug statement
 
         return res.status(201).json({message: "Success", name: user.name, email: user.email })
     } catch(err) {
@@ -85,7 +85,7 @@ export const userLogin = async (
         // Token authorization and store cookie
         res.clearCookie(COOKIE_NAME, {
             path: '/',
-            domain: '.onrender.com',
+            //domain: '.onrender.com',
             httpOnly: true,
             signed: true,
             secure: true,
@@ -96,13 +96,15 @@ export const userLogin = async (
         expires.setDate(expires.getDate() + 7);
         res.cookie(COOKIE_NAME, token, {
             path: '/',
-            domain: '.onrender.com',
+            //domain: '.onrender.com',
             expires,
             httpOnly: true,
             signed: true,
             secure: true,
             sameSite: 'none',
         });
+        console.log("Response Headers with Set-Cookie:", res.getHeaders());
+
 
         return res.status(200).json({message: "Success", name: user.name, email: user.email });
     } catch(err) {
