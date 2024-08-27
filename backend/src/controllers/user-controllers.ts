@@ -39,7 +39,7 @@ export const userSignup = async (
         // create token and store cookies
         res.clearCookie(COOKIE_NAME, {
             path: '/',
-            //domain: '.onrender.com',
+            domain: 'https://openai-chatbot-api.onrender.com',
             httpOnly: true,
             signed: true,
             secure: true,
@@ -51,7 +51,7 @@ export const userSignup = async (
         expires.setDate(expires.getDate() + 7);
         res.cookie(COOKIE_NAME, token, {
             path: '/',
-            //domain: '.onrender.com',
+            domain: 'https://openai-chatbot-api.onrender.com',
             expires,
             httpOnly: true,
             signed: true,
@@ -87,7 +87,7 @@ export const userLogin = async (
         // Token authorization and store cookie
         res.clearCookie(COOKIE_NAME, {
             path: '/',
-            //domain: '.onrender.com',
+            domain: 'openai-chatbot-api.onrender.com',
             httpOnly: true,
             signed: true,
             secure: true,
@@ -98,7 +98,7 @@ export const userLogin = async (
         expires.setDate(expires.getDate() + 7);
         res.cookie(COOKIE_NAME, token, {
             path: '/',
-            //domain: '.onrender.com',
+            domain: 'openai-chatbot-api.onrender.com',
             expires,
             httpOnly: true,
             signed: true,
