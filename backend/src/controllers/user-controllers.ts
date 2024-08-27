@@ -59,6 +59,8 @@ export const userSignup = async (
             sameSite: 'none',
         });
         console.log("Generated Cookie: ", res.cookie);  //  Debug statement
+        console.log("Response Headers with Set-Cookie:", res.getHeaders());
+
 
         return res.status(201).json({message: "Success", name: user.name, email: user.email })
     } catch(err) {
@@ -150,7 +152,7 @@ export const logoutUser = async (
         }
         res.clearCookie(COOKIE_NAME, {
             path: '/',
-            domain: '.onrender.com',
+            //domain: '.onrender.com',
             httpOnly: true,
             signed: true,
             secure: true,
